@@ -1,12 +1,12 @@
 //app.js
 import React, { useState } from 'react';
-import NavBar from './Components/navbar/navbar';
-import CreatePDFVertical1 from './Components/pdfCreator/PDFVertical1/CreatePDFVertical1';
-import CreatePDFVertical2 from './Components/pdfCreator/PDfVertical2/CreatePDFVertical2';
-import CreatePDFVertical3 from './Components/pdfCreator/PDFVertical3/CreatePDFVertical3';
-import CreatePDFVertical4 from './Components/pdfCreator/PDFVertical4/CreatePDFVertical4';
-import CreatePDFVertical5 from './Components/pdfCreator/PDFVertical5/CreatePDFVertical5';
-import CreatePDFVertical6 from './Components/pdfCreator/PDFVertical6/CreatePDFVertical6';
+import NavBar from './components/navbar/navbar';
+import CreatePDFVertical1 from './components/pdfCreator/PDFVertical1/CreatePDFVertical1';
+import CreatePDFVertical2 from './components/pdfCreator/PDFVertical2/CreatePDFVertical2';
+import CreatePDFVertical3 from './components/pdfCreator/PDFVertical3/CreatePDFVertical3';
+import CreatePDFVertical4 from './components/pdfCreator/PDFVertical4/CreatePDFVertical4';
+import CreatePDFVertical5 from './components/pdfCreator/PDFVertical5/CreatePDFVertical5';
+import CreatePDFVertical6 from './components/pdfCreator/PDFVertical6/CreatePDFVertical6';
 // import CreatePDFHorizontal1 from './Components/pdfCreator/PDFHorizontal1/CreatePDFHorizontal1';
 
 const App = () => {

@@ -1,10 +1,10 @@
 // NavBar.js
 import './navbar.css';
 import React, { useState } from 'react';
-import PDFpro_logo from '../../../images/PDFpro_logo.png';
+import PDFpro_logo from '../../assets/images/PDFpro_logo.png';
 import HorizontalVerticalMenu from '../horizontalVerticalMenu/horizontalVerticalMenu'
 import ImagesMenu from '../imagesMenu/imagesMenu';
-import ConfirmPreferences from '../ConfirmPreferences/confirmPreferences'; // Asegúrate de importar correctamente
+import ConfirmPreferences from '../confirmPreferences/confirmPreferences'; // Asegúrate de importar correctamente
 import { FaHome } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 

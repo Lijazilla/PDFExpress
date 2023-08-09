@@ -3,7 +3,7 @@ import { saveAs } from 'file-saver';
 import './vertical-one.css'
 import { pdf } from '@react-pdf/renderer';
 import { PDFGenerator, toBlob } from './ReactPDFVertical1';
-import PDFPage from './pdfPage';
+
 
 
 const CreatePDFVertical1 = () => {

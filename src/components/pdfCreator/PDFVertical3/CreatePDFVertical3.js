@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import './Vertical-three.css';
 import { pdf } from '@react-pdf/renderer';
-import { PDFGenerator, toBlob } from './ReactPDfVertical3';
+import { PDFGenerator, toBlob } from './ReactPDFVertical3';
 
 const CreatePDFVertical3 = () => {
     const [pdfGenerated, setPdfGenerated] = useState(false);
