@@ -195,7 +195,41 @@ const LandingPage = () => {
                                 <button>Comprar ahora</button>
                             </div>
                         </aside>
+                    </section>
+                </section>
 
+                <section className="pricing-section-container">
+                    <h1 className="pricing-title">Planes y Precios para Equipos</h1>
+                    
+                    <section className="pricing-boxes">
+                        <aside className="montly">
+                            <h1>PDF Express Plan Mensual para Equipos</h1>
+                            <div className="price-tax-box">
+                                <h2>MXN $199.00/Mes (por licencia)</h2>
+                                <p>IVA NO INCLUIDO</p>
+                            </div>
+                            <p>Para equipos de 3 o más licencias. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo</p>
+
+                            <div className="bottom-pricing-box">
+                                <FontAwesomeIcon icon={faLock} className="lock"/>
+                                <p>Transacción Segura</p>
+                                <button>Comprar ahora</button>
+                            </div>
+                        </aside>
+
+                        <aside className="anualy">
+                            <h1>PDF Express Plan Anual para Equipos</h1>
+                            <div className="price-tax-box-teams">
+                                <h2>MXN $2,280.00/año (por licencia)</h2>
+                                <p>IVA NO INCLUIDO</p>
+                            </div>
+                            <p>Para equipos de 3 o más licencias. Un solo pago equivalente a $190.00 por licencia por 12 meses. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo</p>
+                            <div className="bottom-pricing-box">
+                                <FontAwesomeIcon icon={faLock} className="lock"/>
+                                <p>Transacción Segura</p>
+                                <button>Comprar ahora</button>
+                            </div>
+                        </aside>
                     </section>
                 </section>
 

@@ -276,11 +276,13 @@
 .pricing-title{
     color: white;
     font-size: xx-large;
+    margin: 0;
+    padding: 1vh;
 }
 .pricing-boxes{
     position: relative;
     width: 100%;
-    height: 95vh;
+    height: 65vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -294,7 +296,6 @@
     justify-content: center;
     align-items: center;
     width: 45%;
-    gap: 5vh;
     color: white;
     border: black solid 2px;
     border-radius: 12px;
@@ -310,13 +311,15 @@
     justify-content: center;
     align-items: center;
     width: 45%;
-    gap: 6vh;
     color: white;
     border: black solid 2px;
     border-radius: 12px;
 }
 .anualy h1{
     font-size: xx-large;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 .anualy p{
     width: 97%;
@@ -324,6 +327,20 @@
 .price-tax-box{
     margin: 0;
     padding: 0;
+    
+}
+.price-tax-box-teams{
+    margin: 0;
+    padding: 0;
+}
+.price-tax-box-teams h2{
+    margin: 0;
+    padding: 0;
+}
+.price-tax-box-teams p{
+    margin: 0;
+    padding: 0;
+    font-size: smaller;
 }
 .price-tax-box h2{
     margin: 0;
@@ -354,7 +371,7 @@
     left: 3vh;
 }
 .bottom-pricing-box button {
-    background-color: #f0bbbb;
+    background-color: #000089;
     border: none;
     color: white;
     padding: 10px 20px;
