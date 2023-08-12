@@ -50,7 +50,6 @@
     align-items: center;
     margin-top: 12px;
 }
-
 .custom-file-upload-one{
     text-align: center;
     position: relative;
@@ -63,6 +62,21 @@
     align-items: center;
     box-sizing: border-box;
     padding: 0;
+    font-size: 5;
+}
+.file-upload-content {
+    display: flex;
+    align-items: center;
+}
+.done-icon {
+    font-size: 14px; /* Ajusta el tamaño del ícono */
+    margin-right: 6px; /* Espaciado entre el ícono y el texto */
+    color: green;
+}
+.image-title {
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    max-width: calc(100% - 30px); /* Ajusta este valor según tu diseño */
+    text-overflow: ellipsis;
 }
 #cancel-logo-one{
     position: absolute;
@@ -138,16 +152,33 @@
     justify-content: space-around;
     border: none;
 }
-.container-image-vertical-three{
+.container-image-for-five-row2{
     position: relative;
     display: flex;
-    margin-top: 2%;
+    flex-direction: row;
+    top: 2%;
     width: 100%;
-    height: 25%;
+    height: 24vh;
     justify-content: space-around;
     border: none;
 }
 .image-for-vertical-one {
+    display: flex;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%; 
+    border: rgb(67, 67, 67) solid 1px;
+    background-color: rgb(214, 214, 214);
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 0;
+    object-fit: cover;
+}
+.image-for-vertical-five {
     display: flex;
     text-align: center;
     position: relative;
@@ -198,6 +229,15 @@
     height: auto;
     top: 1%;
 }
+.description-row2-for-image{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    top: 3%;
+}
 .description-input-v2-three{
     position: relative;
     display: flex;
@@ -243,14 +283,14 @@
     position: absolute;
     right:1%;
 }
-.contact-input-one{
+.contact-five-version{
     position: relative;
     display: flex;
     width: 90%;
     margin: 0;
     padding: 0;
     left: 1%;
-    top: 4%;
+    top: 8%;
 }
 .contacto{
     width: 80%;
@@ -371,6 +411,15 @@
         justify-content: space-around;
         border: none;
     }
+    .container-image-for-five-row2{
+        top: 2%;
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 18vh;
+        justify-content: space-around;
+        border: none;
+    }
     .image-for-vertical-one{
         position: relative;
         width: 46%;
@@ -400,14 +449,14 @@
         margin-right: 7%;
         top: .5%;
     }
-    .description-input-v2-three{
+    .description-row2-for-image{
         position: relative;
         display: flex;
         justify-content: space-around;
         width: 100%;
         height: auto;
         margin-right: 7%;
-        top: 0.5%;
+        top: 5%;
     }
     .description-text-one{
         width: 35%;
@@ -484,10 +533,16 @@
     #cancel-description-1-three{
         position: absolute;
         right: 25%;
+        bottom: 2vh;
     }
     #cancel-description-1-four{
         position: absolute;
         right: 31%;
+        bottom: 2vh;
+    }
+    #cancel-description-1-five{
+        position: absolute;
+        bottom: 2vh;
     }
     .contact-input-one{
         position: relative;

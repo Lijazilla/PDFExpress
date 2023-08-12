@@ -186,7 +186,9 @@ const CreatePDFVertical6 = ({ data, pdfContent, formData }) => {
         <Page size="A4" style={styles.page}>
             <View style={styles.container}>
             <Image src={data.logo} style={styles.logo} />
+            
             </View>
+            <Text style={styles.date}>{formattedDate}</Text>
             <Text style={styles.title}>{data.titulo}</Text>
             <Text style={styles.text}>{data.texto}</Text>
             {data.imagen1 && (

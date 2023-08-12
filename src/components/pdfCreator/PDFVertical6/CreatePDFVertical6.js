@@ -5,6 +5,8 @@ import './Vertical6.css';
 import { PDFGenerator, toBlob } from './ReactPDFVertical6';
 import { pdf } from '@react-pdf/renderer';
 import { PDFViewer, Document, Page, Text } from '@react-pdf/renderer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const CreatePDFVertical6 = () => {
     const [pdfGenerated, setPdfGenerated] = useState(false);
@@ -182,7 +184,18 @@ const CreatePDFVertical6 = () => {
                 <div className='container-logo-one'>
                     <input type="file" id="logo-upload" accept="image/*" onChange={handleLogoChange} style={{ display: 'none' }} />
                     <label htmlFor="logo-upload" className="custom-file-upload-one">
-                        + Cargar Logo (opcional)
+                        {formData.logo ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                logo cargado Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar logo (opcional)
+                                        </span>
+                                    )}
                     </label>
                     {formData.logo && <button id="cancel-logo-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, logo: null }))}>X</button>}</div>
                 </div>
@@ -210,14 +223,53 @@ const CreatePDFVertical6 = () => {
             </div>
             <div className="container-image-vertical-one">
                 {formData.imagen1 && <button id="cancel-image-three" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen1: null }))}>X</button>}
-                <input type="file" id="image-upload-3" accept="image/*" onChange={handleImage3Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-3" className="image-for-vertical-one"> + Cargar imagen</label>
+                <input type="file" id="image-upload-1" accept="image/*" onChange={handleImage1Change} style={{ display: 'none' }} />
+                <label htmlFor="image-upload-1" className="image-for-vertical-one">
+                    {formData.imagen1 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 1 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 1 (opcional)
+                                        </span>
+                                    )}
+                </label>
                 {formData.imagen2 && <button id="cancel-image-four" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen2: null }))}>X</button>}
-                <input type="file" id="image-upload-4" accept="image/*" onChange={handleImage4Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-4" className="image-for-vertical-one"> + Cargar imagen</label>
+                <input type="file" id="image-upload-2" accept="image/*" onChange={handleImage2Change} style={{ display: 'none' }} />
+                <label htmlFor="image-upload-2" className="image-for-vertical-one">
+                    {formData.imagen2 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 2 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 2 (opcional)
+                                        </span>
+                                    )}
+                </label>
                 {formData.imagen3 && <button id="cancel-image-two" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen3: null }))}>X</button>}
-                <input type="file" id="image-upload-5" accept="image/*" onChange={handleImage5Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-5" className="image-for-vertical-one"> + Cargar imagen</label>
+                <input type="file" id="image-upload-3" accept="image/*" onChange={handleImage3Change} style={{ display: 'none' }} />
+                <label htmlFor="image-upload-3" className="image-for-vertical-one">
+                    {formData.imagen3 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 3 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 3 (opcional)
+                                        </span>
+                                    )}
+                </label>
             </div>
             <div className="description-input-v2-one">
             <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-three' name="descripcion1" value={formData.descripcion1} onChange={handleInputChange} />
@@ -229,14 +281,53 @@ const CreatePDFVertical6 = () => {
             </div>
             <div className="container-image-vertical-one">
                 {formData.imagen4 && <button id="cancel-image-three" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen4: null }))}>X</button>}
-                <input type="file" id="image-upload-3" accept="image/*" onChange={handleImage3Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-3" className="image-for-vertical-one"> + Cargar imagen</label>
-                {formData.imagen5 && <button id="cancel-image-four" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen5: null }))}>X</button>}
                 <input type="file" id="image-upload-4" accept="image/*" onChange={handleImage4Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-4" className="image-for-vertical-one"> + Cargar imagen</label>
-                {formData.imagen6 && <button id="cancel-image-two" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen6: null }))}>X</button>}
+                <label htmlFor="image-upload-4" className="image-for-vertical-one">
+                    {formData.imagen4 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 4 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 4 (opcional)
+                                        </span>
+                                    )}
+                </label>
+                {formData.imagen5 && <button id="cancel-image-four" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen5: null }))}>X</button>}
                 <input type="file" id="image-upload-5" accept="image/*" onChange={handleImage5Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-5" className="image-for-vertical-one"> + Cargar imagen</label>
+                <label htmlFor="image-upload-5" className="image-for-vertical-one">
+                    {formData.imagen5 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 5 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 5 (opcional)
+                                        </span>
+                                    )}
+                </label>
+                {formData.imagen6 && <button id="cancel-image-two" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen6: null }))}>X</button>}
+                <input type="file" id="image-upload-6" accept="image/*" onChange={handleImage6Change} style={{ display: 'none' }} />
+                <label htmlFor="image-upload-6" className="image-for-vertical-one">
+                    {formData.imagen6 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 6 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 6 (opcional)
+                                        </span>
+                                    )}
+                </label>
             </div>
             <div className="description-input-v2-one">
             <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-three' name="descripcion4" value={formData.descripcion4} onChange={handleInputChange} />
