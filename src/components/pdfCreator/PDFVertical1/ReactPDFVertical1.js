@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
     marginTop: '222mm',
     marginLeft: '60mm',
     width: '90mm',
-    fontSize: 11
+    fontSize: 11,
+    textAlign: 'center'
   },
   contact: {
     position: 'absolute',
@@ -88,6 +89,8 @@ const styles = StyleSheet.create({
 
 
 const PDFGenerator = ({ data }) => {
+    const formattedDate = data.fecha ? format(parseISO(data.fecha), 'dd MMMM yyyy') : '';
+    
     return (
         
         <Document>

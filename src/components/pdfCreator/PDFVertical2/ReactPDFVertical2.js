@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
         width: '85mm',
         height: 'auto',
         fontSize: 11,
+        textAlign: 'center'
     },
     description2: {
         position: 'absolute',
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
         width: '85mm',
         height: 'auto',
         fontSize: 11,
+        textAlign: 'center'
     },
     contact: {
         position: 'absolute',

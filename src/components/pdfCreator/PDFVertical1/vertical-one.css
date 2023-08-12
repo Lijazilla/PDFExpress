@@ -63,10 +63,31 @@
     align-items: center;
     box-sizing: border-box;
     padding: 0;
+    font-size: 5;
 }
-#cancel-logo-one{
+.file-upload-content {
+    display: flex;
+    align-items: center;
+}
+.done-icon {
+    font-size: 14px; /* Ajusta el tamaño del ícono */
+    margin-right: 6px; /* Espaciado entre el ícono y el texto */
+    color: green;
+}
+.image-title {
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    max-width: calc(100% - 30px); /* Ajusta este valor según tu diseño */
+    text-overflow: ellipsis;
+}
+.upload-text {
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#cancel-logo-for-vertical-one{
     position: absolute;
-    left: 17%;
+    left: 14%;
     top: 1%;
 }
 
@@ -123,10 +144,10 @@
     border-radius: 8px;
     background: var(--plate);
 }
-#cancel-text-one{
+#cancel-text-for-vertical-one{
     position: absolute;
-    left: 95.7%;
-    top: 4%;
+    left: 97%;
+    top: -25%;
     z-index: 3;
 }
 .container-image-vertical-one{
@@ -138,14 +159,14 @@
     justify-content: space-around;
     border: none;
 }
-.image-for-vertical-one {
+.image-for-vertical-type-one {
     display: flex;
     text-align: center;
     position: relative;
     justify-content: center;
     align-items: center;
     width: 60%;
-    height: 110%; 
+    height: 50vh; 
     border: rgb(67, 67, 67) solid 1px;
     background-color: rgb(214, 214, 214);
     border: none;
@@ -154,43 +175,43 @@
     padding: 0;
     object-fit: cover;
 }
-#cancel-image-one{
+#cancel-image-for-vertical-one{
     position: absolute;
     margin-top: 0%;
-    right: 16%;
+    right: 17%;
     z-index: 2;
     text-align: center;
 }
-.description-input-v2-one{
+.description-input-for-vertical-one{
     position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
     height: auto;
     margin-right: 7%;
-    top: 5%;
+    top: 22%;
 }
-.description-text-one{
+.description-text-one-for-vertical-one{
     width: 40%;
     height: auto;
     border: none;
     background: var(--plate);
     border-radius: 8px;
 }
-#cancel-description-1-one{
+#cancel-description1-for-vertical-one{
     position: absolute;
     right: 27%;
 }
-.contact-input-one{
+.contact-div-for-vertical-one{
     position: relative;
     display: flex;
     width: 90%;
     margin: 0;
     padding: 0;
     left: 1%;
-    top: 10%;
+    top: 33%;
 }
-.contacto{
+.contact-input-for-vertical-one{
     width: 80%;
     height: auto;
     border: none;
@@ -308,10 +329,15 @@
         justify-content: space-around;
         border: none;
     }
-    .image-for-vertical-one{
+    .image-for-vertical-type-one{
         width: 75%;
+        height: 40vh;
     }
-    .description-text-one{
+    .description-input-for-vertical-one{
+        width: 100%;
+        top: 19%;
+    }
+    .description-text-one-for-vertical-one{
         width: 60%;
         height: auto;
         border: none;
@@ -324,7 +350,7 @@
         right: 1%;
         z-index: 3;
     }
-    #cancel-logo-one{
+    #cancel-logo-for-vertical-one{
         position: absolute;
         left: 105%;
         top: 1%;
@@ -335,24 +361,27 @@
         margin-top: -7%;
         z-index: 2;
     }
-    #cancel-text-one{
+    #cancel-text-for-vertical-one{
         position: absolute;
         left: 92%;
         top: 4%;
         z-index: 3;
     }
-    #cancel-image-one{
+    #cancel-image-for-vertical-one{
         position: absolute;
         top: 2%;
         right: 5%;
         z-index: 2;
         text-align: center;
     }
-    #cancel-description-1-one{
+    #cancel-description1-for-vertical-one{
         position: absolute;
-        right: 12%;
+        right: 15%;
     }
-    .contacto{
+    .contact-div-for-vertical-one{
+        top: 28%;
+    }
+    .contact-input-for-vertical-one{
         width: 95%;
         height: auto;
         border: none;

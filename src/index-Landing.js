@@ -8,6 +8,7 @@ import personManagingDigitalTasks from './assets/images/png-images/person-managi
 import athletePosing from './assets/images//png-images/athlete-posing-in-action-on-a-podium.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+import ImageSlider from "./components/imageSlider/imageSlider";
 
 const LandingPage = () => {
 
@@ -58,7 +59,7 @@ const LandingPage = () => {
             <section className="body-main-container">
                 <div className="index-main-title-container">
                     <div className="index-h1-title-container">
-                        <h1 className="main-container-h1">PDF Express</h1>
+                        <h1 className="main-container-h1">Reporte PDF</h1>
                         <h2 className="main-container-h2">Genera reportes de tus Servicios</h2>
                         <h3 className="main-container-h3">Mandalo a tus clientes al momento.</h3>
                     </div> 
@@ -71,7 +72,7 @@ const LandingPage = () => {
                     </div> 
                 </div>
                 <div className="body-img-main-container">
-
+                    <img src="https://i.postimg.cc/XNHPjdHm/documento-final-pose-ganadora.jpg" alt="Final Result"/>
                 </div>
                 
             </section>
@@ -88,7 +89,7 @@ const LandingPage = () => {
                 <div className="second-body-main-container">
                     <div className="second-index-main-title-container">
                         <div className="second-index-h1-title-container">
-                            <h1 className="second-main-container-h1">PDF Express</h1>
+                            <h1 className="second-main-container-h1">Reporte PDF</h1>
                             <p className="second-main-container-p">Reportes profesionales en minutos: Olvídate de horas de trabajo en la oficina. 
                             Crea informes detallados y visualmente atractivos al instante, estés donde estés.</p>
                         </div> 
@@ -106,7 +107,7 @@ const LandingPage = () => {
                             </div> 
 
                             <div className="second-index-h1-title-container">
-                                <h1 className="second-main-container-h1">PDF Express</h1>
+                                <h1 className="second-main-container-h1">Reporte PDF</h1>
                                 <p className="second-main-container-p">Muestra tu trabajo con confianza: Proporciona a tus clientes evidencia visual
                             del servicio realizado en tiempo real, fortaleciendo la confianza en tu trabajo.</p>
                             </div> 
@@ -129,7 +130,7 @@ const LandingPage = () => {
                 <div className="second-body-main-container">
                     <div className="second-index-main-title-container">
                         <div className="second-index-h1-title-container">
-                            <h1 className="second-main-container-h1">PDF Express</h1>
+                            <h1 className="second-main-container-h1">Reporte PDF</h1>
                             <p className="second-main-container-p">Elimina controversias: Evita malentendidos y disputas con reportes detallados que 
                                                                     documentan cada aspecto del servicio, desde texto hasta imágenes.</p>
                         </div> 
@@ -147,7 +148,7 @@ const LandingPage = () => {
                             </div> 
 
                             <div className="second-index-h1-title-container">
-                                <h1 className="second-main-container-h1">PDF Express</h1>
+                                <h1 className="second-main-container-h1">Reporte PDF</h1>
                                 <p className="second-main-container-p">Libera tiempo valioso: Dedica más tiempo a lo que importa. 
                                         Reduce las tareas administrativas y enfócate en ofrecer un servicio de calidad junto con tu equipo de trabajo.</p>
                             </div> 
@@ -163,6 +164,7 @@ const LandingPage = () => {
                                                             reportes profesionales en minutos.</h2>
                 </article>
 
+                    {/* Pricing section */}
                 <section className="pricing-section-container">
                     <h1 className="pricing-title">Planes y Precios</h1>
                     
@@ -173,7 +175,7 @@ const LandingPage = () => {
                                 <h2>MXN $219.00/Mes</h2>
                                 <p>IVA NO INCLUIDO</p>
                             </div>
-                            <p>Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo</p>
+                            <p>Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo la primera vez.</p>
 
                             <div className="bottom-pricing-box">
                                 <FontAwesomeIcon icon={faLock} className="lock"/>
@@ -188,7 +190,7 @@ const LandingPage = () => {
                                 <h2>MXN $2,388.00/año</h2>
                                 <p>IVA NO INCLUIDO</p>
                             </div>
-                            <p>Un solo pago equivalente a $199.00 por 12 meses. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo</p>
+                            <p>Un solo pago equivalente a $199.00 por 12 meses. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo la primera vez.</p>
                             <div className="bottom-pricing-box">
                                 <FontAwesomeIcon icon={faLock} className="lock"/>
                                 <p>Transacción Segura</p>
@@ -208,7 +210,7 @@ const LandingPage = () => {
                                 <h2>MXN $199.00/Mes (por licencia)</h2>
                                 <p>IVA NO INCLUIDO</p>
                             </div>
-                            <p>Para equipos de 3 o más licencias. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo</p>
+                            <p>Para equipos de 3 o más licencias. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo la primera vez.</p>
 
                             <div className="bottom-pricing-box">
                                 <FontAwesomeIcon icon={faLock} className="lock"/>
@@ -223,7 +225,7 @@ const LandingPage = () => {
                                 <h2>MXN $2,280.00/año (por licencia)</h2>
                                 <p>IVA NO INCLUIDO</p>
                             </div>
-                            <p>Para equipos de 3 o más licencias. Un solo pago equivalente a $190.00 por licencia por 12 meses. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo</p>
+                            <p>Para equipos de 3 o más licencias. Un solo pago equivalente a $190.00 por licencia por 12 meses. Puedes cancelar en un plazo de 14 días para obtener tu reembolso completo la primera vez.</p>
                             <div className="bottom-pricing-box">
                                 <FontAwesomeIcon icon={faLock} className="lock"/>
                                 <p>Transacción Segura</p>
@@ -235,7 +237,7 @@ const LandingPage = () => {
 
 
 
-            {/* <Link to="/app">Ir a la App</Link> */}
+            <Link to="/app">Ir a la App</Link>
         </div>
     );
 };

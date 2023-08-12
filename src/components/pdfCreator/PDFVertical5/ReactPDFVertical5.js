@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
         marginLeft: '13mm',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image2: {
         position: 'absolute',
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
         marginLeft: '113mm',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image3: {
         position: 'absolute',
@@ -100,6 +102,7 @@ const styles = StyleSheet.create({
         marginLeft: '10mm',
         width: '54mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image4: {
         position: 'absolute',
@@ -117,6 +120,7 @@ const styles = StyleSheet.create({
         marginLeft: '78mm',
         width: '54mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image5: {
         position: 'absolute',
@@ -134,6 +138,7 @@ const styles = StyleSheet.create({
         marginLeft: '146mm',
         width: '54mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     contact: {
         position: 'absolute',

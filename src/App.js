@@ -47,6 +47,7 @@ const App = () => {
     return (
         <div>
         <NavBar handleConfirmPreferences={handleConfirmPreferences} />
+        
 
         {/* Renderizar el componente adecuado según el estado de confirmPreferencesClicked y formatSelected */}
         {confirmPreferencesClicked && formatSelected === 'vertical2' && <CreatePDFVertical2 />}

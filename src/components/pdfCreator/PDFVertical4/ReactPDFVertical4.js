@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         left: '5mm',
         width: '35mm',
         height: '35mm',
-        border: '1pt solid black',
         objectFit: 'cover',
         maxWidth: '35mm',
         maxHeight: '35mm',
@@ -38,7 +37,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         marginTop: '50mm',
         left: '10mm',
-        border: '1pt solid black',
         width: '150mm',
         fontSize: 11,
         fontWeight: 'bold',
@@ -50,7 +48,6 @@ const styles = StyleSheet.create({
         width: '195mm',
         height: '35mm',
         left: '7mm',
-        border: '1pt solid black',
         fontSize: 11,
     },
     image: {
@@ -61,16 +58,15 @@ const styles = StyleSheet.create({
         height: '70mm',
         maxWidth: '95mm',
         maxHeight: '100mm',
-        border: '1pt solid black',
         objectFit: 'cover',
     },
     description: {
         position: 'absolute',
         marginTop: '175mm',
         marginLeft: '14mm',
-        border: '1pt solid black',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image2: {
         position: 'absolute',
@@ -80,16 +76,15 @@ const styles = StyleSheet.create({
         height: '70mm',
         maxWidth: '95mm',
         maxHeight: '100mm',
-        border: '1pt solid black',
         objectFit: 'cover',
     },
     description2: {
         position: 'absolute',
         marginTop: '175mm',
-        marginLeft: '114mm',
-        border: '1pt solid black',
+        marginLeft: '114mm',    
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image3: {
         position: 'absolute',
@@ -99,16 +94,15 @@ const styles = StyleSheet.create({
         height: '70mm',
         maxWidth: '95mm',
         maxHeight: '100mm',
-        border: '1pt solid black',
         objectFit: 'cover',
     },
     description3: {
         position: 'absolute',
         marginTop: '265mm',
         marginLeft: '14mm',
-        border: '1pt solid black',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image4: {
         position: 'absolute',
@@ -118,16 +112,15 @@ const styles = StyleSheet.create({
         height: '70mm',
         maxWidth: '95mm',
         maxHeight: '100mm',
-        border: '1pt solid black',
         objectFit: 'cover',
     },
     description4: {
         position: 'absolute',
         marginTop: '265mm',
         marginLeft: '114mm',
-        border: '1pt solid black',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     contact: {
         position: 'absolute',
@@ -135,14 +128,12 @@ const styles = StyleSheet.create({
         width: '175mm',
         height: '5mm',
         marginLeft: '5mm',
-        border: '1pt solid black',
         fontSize: 11,
     },
     pageNumber: {
         position: 'absolute',
         bottom: '5mm',
         right: '5mm',
-        border: '1pt solid black',
         fontSize: 11,
     },
 });

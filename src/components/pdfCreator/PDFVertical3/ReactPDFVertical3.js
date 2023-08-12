@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
         marginLeft: '14mm',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image2: {
         position: 'absolute',
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
         marginLeft: '114mm',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     image3: {
         position: 'absolute',
@@ -100,6 +102,7 @@ const styles = StyleSheet.create({
         marginLeft: '68mm',
         width: '85mm',
         fontSize: 11,
+        textAlign: 'center'
     },
     contact: {
         position: 'absolute',

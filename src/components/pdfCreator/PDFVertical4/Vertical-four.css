@@ -50,7 +50,6 @@
     align-items: center;
     margin-top: 12px;
 }
-
 .custom-file-upload-one{
     text-align: center;
     position: relative;
@@ -63,6 +62,21 @@
     align-items: center;
     box-sizing: border-box;
     padding: 0;
+    font-size: 5;
+}
+.file-upload-content {
+    display: flex;
+    align-items: center;
+}
+.done-icon {
+    font-size: 14px; /* Ajusta el tamaño del ícono */
+    margin-right: 6px; /* Espaciado entre el ícono y el texto */
+    color: green;
+}
+.image-title {
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    max-width: calc(100% - 30px); /* Ajusta este valor según tu diseño */
+    text-overflow: ellipsis;
 }
 #cancel-logo-one{
     position: absolute;

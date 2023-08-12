@@ -78,6 +78,7 @@
     padding: 0;
 }
 
+
 .index-h1-title-container{
     position: relative;
     width: 100%;
@@ -129,9 +130,12 @@
 }
 .body-img-main-container{
     width: 50%;
-    height: 60vh;
+    height: 70vh;
     position: relative;
-    background: rgb(78, 196, 24);
+}
+.body-img-main-container img{
+    width: 100%;
+    height: 100%;
 }
 
 .text-between-sections-container{

@@ -3,6 +3,8 @@ import { saveAs } from 'file-saver';
 import './vertical-one.css'
 import { pdf } from '@react-pdf/renderer';
 import { PDFGenerator, toBlob } from './ReactPDFVertical1';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -119,13 +121,25 @@ const CreatePDFVertical1 = () => {
                     <div className='container-logo-one'>
                         <input type="file" id="logo-upload" accept="image/*" onChange={handleLogoChange} style={{ display: 'none' }} />
                         <label htmlFor="logo-upload" className="custom-file-upload-one">
-                            + Cargar Logo (opcional)
+                            {formData.logo ? (
+                                <span>
+                                    <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                    <span className="image-title" style={{ fontSize: '12px' }}>
+                                        Logo cargado Correctamente
+                                    </span>
+                                </span>
+                            ) : (
+                                <span>
+                                    + Cargar Logo (opcional)
+                                </span>
+                            )}
                         </label>
-                        {formData.logo && <button id="cancel-logo-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, logo: null }))}>X</button>}</div>
+                        {formData.logo && <button id="cancel-logo-for-vertical-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, logo: null }))}>X</button>}
                     </div>
+                </div>
 
                     <div className="date-input-one">
-                    <input type="date" id="date-input" placeholder="Fecha" name="fecha" value={formData.fecha} onChange={handleInputChange} />
+                        <input type="date" id="date-input" placeholder="Fecha" name="fecha" value={formData.fecha} onChange={handleInputChange} />
                     </div>
                     {formData.fecha && <button id="cancel-date-one" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'fecha', value: '' } })}>X</button>}
                 </div>
@@ -143,23 +157,37 @@ const CreatePDFVertical1 = () => {
                         rows={6}
                         maxLength={577}
                     />
-                        {formData.texto && <button id="cancel-text-one" className='cancel-button-for-vertical-one' onClick={() => handleCancelImage1()}>X</button>}
+                        {formData.texto && <button id="cancel-text-for-vertical-one" className='cancel-button-for-vertical-one' onClick={() => handleCancelImage1()}>X</button>}
                 </div>
                 <div className="container-image-vertical-one">
-                    {formData.imagen1 && <button id="cancel-image-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen1: null }))}>X</button>}
                     <input type="file" id="image-upload-1" accept="image/*" onChange={handleImage1Change} style={{ display: 'none' }} />
-                    <label htmlFor="image-upload-1" className="image-for-vertical-one"> + Cargar imagen</label>
+                    <label htmlFor="image-upload-1" className="image-for-vertical-type-one">
+                    {formData.imagen1 ? (
+                                <span>
+                                    <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                    <span className="image-title" style={{ fontSize: '12px' }}>
+                                        imagen cargada Correctamente
+                                    </span>
+                                </span>
+                            ) : (
+                                <span>
+                                    + Cargar imagen (opcional)
+                                </span>
+                            )}
+
+                    </label>
+                    {formData.imagen1 && <button id="cancel-image-for-vertical-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen1: null }))}>X</button>}
                 </div>
-                <div className="description-input-v2-one">
-                <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-one' name="descriptionFirst" value={formData.descriptionFirst} onChange={handleInputChange} />
-                {formData.descriptionFirst && <button id="cancel-description-1-one" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'descriptionFirst', value: '' } })}>X</button>}
+                <div className="description-input-for-vertical-one">
+                <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-one-for-vertical-one' name="descriptionFirst" value={formData.descriptionFirst} onChange={handleInputChange} />
+                {formData.descriptionFirst && <button id="cancel-description1-for-vertical-one" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'descriptionFirst', value: '' } })}>X</button>}
                 </div>
-            <div className="contact-input-one">
+            <div className="contact-div-for-vertical-one">
                 <input
                     type="text"
                     placeholder="Agrega tus datos de contacto (opcional)"
                     name="contacto"
-                    className='contacto'
+                    className='contact-input-for-vertical-one'
                     value={formData.contacto}
                     maxLength={92}
                     onChange={handleInputChange}

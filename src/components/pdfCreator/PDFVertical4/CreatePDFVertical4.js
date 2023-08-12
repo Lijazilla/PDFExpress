@@ -4,6 +4,8 @@ import { saveAs } from 'file-saver';
 import './Vertical-four.css';
 import { pdf } from '@react-pdf/renderer';
 import { PDFGenerator, toBlob } from './ReactPDFVertical4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const CreatePDFVertical4 = () => {
     const [pdfGenerated, setPdfGenerated] = useState(false);
@@ -148,7 +150,18 @@ const CreatePDFVertical4 = () => {
                 <div className='container-logo-one'>
                     <input type="file" id="logo-upload" accept="image/*" onChange={handleLogoChange} style={{ display: 'none' }} />
                     <label htmlFor="logo-upload" className="custom-file-upload-one">
-                        + Cargar Logo (opcional)
+                        {formData.logo ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                logo cargado Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar logo (opcional)
+                                        </span>
+                                    )}
                     </label>
                     {formData.logo && <button id="cancel-logo-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, logo: null }))}>X</button>}</div>
                 </div>
@@ -177,10 +190,36 @@ const CreatePDFVertical4 = () => {
             <div className="container-image-vertical-one">
                 {formData.imagen1 && <button id="cancel-image-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen1: null }))}>X</button>}
                 <input type="file" id="image-upload-1" accept="image/*" onChange={handleImage1Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-1" className="image-for-vertical-one"> + Cargar imagen</label>
+                <label htmlFor="image-upload-1" className="image-for-vertical-one">
+                    {formData.imagen1 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 1 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 1 (opcional)
+                                        </span>
+                                    )}
+                </label>
                 {formData.imagen2 && <button id="cancel-image-two" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen2: null }))}>X</button>}
                 <input type="file" id="image-upload-2" accept="image/*" onChange={handleImage2Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-2" className="image-for-vertical-one"> + Cargar imagen</label>
+                <label htmlFor="image-upload-2" className="image-for-vertical-one"> 
+                    {formData.imagen2 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 2 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 2 (opcional)
+                                        </span>
+                                    )}
+                </label>
             </div>
             <div className="description-input-v2-one">
             <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-one' name="descripcion1" value={formData.descripcion1} onChange={handleInputChange} />
@@ -191,10 +230,36 @@ const CreatePDFVertical4 = () => {
             <div className="container-image-vertical-one">
                 {formData.imagen3 && <button id="cancel-image-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen3: null }))}>X</button>}
                 <input type="file" id="image-upload-3" accept="image/*" onChange={handleImage3Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-3" className="image-for-vertical-one"> + Cargar imagen</label>
+                <label htmlFor="image-upload-3" className="image-for-vertical-one"> 
+                    {formData.imagen3 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 3 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 3 (opcional)
+                                        </span>
+                                    )}
+                </label>
                 {formData.imagen4 && <button id="cancel-image-two" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen4: null }))}>X</button>}
                 <input type="file" id="image-upload-4" accept="image/*" onChange={handleImage4Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-4" className="image-for-vertical-one"> + Cargar imagen</label>
+                <label htmlFor="image-upload-4" className="image-for-vertical-one">
+                    {formData.imagen4 ? (
+                                        <span>
+                                            <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
+                                            <span className="image-title">
+                                                Imagen 4 cargada Correctamente
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            + Cargar imagen 4 (opcional)
+                                        </span>
+                                    )}  
+                </label>
             </div>
             <div className="description-input-v2-one">
             <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-one' name="descripcion3" value={formData.descripcion3} onChange={handleInputChange} />

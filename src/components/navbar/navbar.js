@@ -1,7 +1,7 @@
 // NavBar.js
 import './navbar.css';
 import React, { useState } from 'react';
-import PDFpro_logo from '../../assets/images/PDFpro_logo.png';
+
 import HorizontalVerticalMenu from '../horizontalVerticalMenu/horizontalVerticalMenu'
 import ImagesMenu from '../imagesMenu/imagesMenu';
 import ConfirmPreferences from '../confirmPreferences/confirmPreferences'; // Asegúrate de importar correctamente
@@ -49,7 +49,7 @@ const NavBar = ({ handleConfirmPreferences, handleDownload }) => {
         <div className="navbar">
         <div className="first-menu">
             <div className="app-logo">
-            <img src={PDFpro_logo} alt="PDFpro_logo" onClick={handleHomeButton} className="logo" />
+            <Link to="/">Ir a Home</Link>
             </div>
             <div className='home-icon'>
             <FaHome onClick={handleHomeButton} size={30}/>
