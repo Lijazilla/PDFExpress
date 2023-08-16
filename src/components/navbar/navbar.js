@@ -49,7 +49,7 @@ const NavBar = ({ handleConfirmPreferences, handleDownload }) => {
         <div className="navbar">
         <div className="first-menu">
             <div className="app-logo">
-            <Link to="/">Ir a Home</Link>
+            {/* <Link to="/">Ir a Home</Link> */}
             </div>
             <div className='home-icon'>
             <FaHome onClick={handleHomeButton} size={30}/>
