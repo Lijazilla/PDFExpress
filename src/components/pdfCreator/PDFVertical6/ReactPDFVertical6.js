@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     },
     description: {
         position: 'absolute',
-        marginTop: '175mm',
+        marginTop: '170mm',
         marginLeft: '10mm',
         width: '54mm',
         fontSize: 11,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
     description2: {
         position: 'absolute',
-        marginTop: '175mm',
+        marginTop: '170mm',
         marginLeft: '78mm',
         width: '54mm',
         fontSize: 11,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     },
     description3: {
         position: 'absolute',
-        marginTop: '175mm',
+        marginTop: '170mm',
         marginLeft: '146mm',
         width: '54mm',
         fontSize: 11,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     description4: {
         position: 'absolute',
-        marginTop: '265mm',
+        marginTop: '260mm',
         marginLeft: '10mm',
         width: '54mm',
         fontSize: 11,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     },
     description5: {
         position: 'absolute',
-        marginTop: '265mm',
+        marginTop: '260mm',
         marginLeft: '78mm',
         width: '54mm',
         fontSize: 11,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     },
     description6: {
         position: 'absolute',
-        marginTop: '265mm',
+        marginTop: '260mm',
         marginLeft: '146mm',
         width: '54mm',
         fontSize: 11,

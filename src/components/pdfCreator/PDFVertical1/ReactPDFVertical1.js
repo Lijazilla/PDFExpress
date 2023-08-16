@@ -2,6 +2,8 @@
 import React from 'react';
 import { Document, Page, Text, View, Image, StyleSheet, Font, pdf } from '@react-pdf/renderer';
 import { parseISO, format } from 'date-fns';
+import pica from 'pica';
+
 
 const fecha = '2023-07-22'; // Ejemplo de una fecha en formato ISO (AAAA-MM-DD)
 const fechaValida = parseISO(fecha);
@@ -57,6 +59,7 @@ const styles = StyleSheet.create({
   image: {
     position: 'absolute',
     alignItems: 'center',
+    objectFit: 'cover',
     marginTop: '110mm',
     marginLeft: '43mm',
     width: '130mm',
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
   },
   description: {
     position: 'absolute',
-    marginTop: '222mm',
+    marginTop: '212mm',
     marginLeft: '60mm',
     width: '90mm',
     fontSize: 11,
@@ -98,6 +101,7 @@ const styles = StyleSheet.create({
 
 const ReactPDFVertical1 = ({ data }) => {
     const formattedDate = data.fecha ? format(parseISO(data.fecha), 'dd MMMM yyyy') : '';
+
     
     return (
         
@@ -118,9 +122,9 @@ const ReactPDFVertical1 = ({ data }) => {
                 <Text style={styles.title}>{data.titulo}</Text>
                 <Text style={styles.text}>{data.texto}</Text>
                 {data.imagen1 && (
-                <View style={styles.image}>
-                    <Image src={data.imagen1} />
-                </View>
+                    <View style={styles.image}>
+                        <Image src={data.imagen1} />
+                    </View>
                 )}
                 <Text style={styles.description}>{data.descriptionFirst}</Text>
                 <Text style={styles.contact}>{data.contacto}</Text>

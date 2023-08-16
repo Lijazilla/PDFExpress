@@ -7,13 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { PDFViewer, StyleSheet } from '@react-pdf/renderer';
 
-
-
-
 const CreatePDFVertical1 = () => {
     const [pdfGenerated, setPdfGenerated] = useState(false);
-    const [pagesData, setPagesData] = useState([{ /* Default data for first page */ }]);
-    const [currentPage, setCurrentPage] = useState(1);
     const [showPreview, setShowPreview] = useState(false);
     const [formData, setFormData] = useState({
         texto: '',
@@ -48,7 +43,6 @@ const CreatePDFVertical1 = () => {
             }));
         }
     };
-    
 
     const handleLogoChange = (e) => {
         const file = e.target.files[0];
@@ -114,7 +108,6 @@ const CreatePDFVertical1 = () => {
         contacto: '',
         });
         setPdfGenerated(false);
-        setCurrentPage(1);
         window.location.reload();
     };
 
@@ -224,8 +217,8 @@ const CreatePDFVertical1 = () => {
                                     + Cargar imagen (opcional)
                                 </span>
                             )}
-
                     </label>
+
                     {formData.imagen1 && <button id="cancel-image-for-vertical-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen1: null }))}>X</button>}
                 </div>
                 <div className="description-input-for-vertical-one">
@@ -252,6 +245,7 @@ const CreatePDFVertical1 = () => {
                     </PDFViewer>
                     )}
             </section>
+
         </section>
     )}; 
 
