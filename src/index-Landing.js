@@ -8,7 +8,7 @@ import personManagingDigitalTasks from './assets/images/png-images/person-managi
 import athletePosing from './assets/images//png-images/athlete-posing-in-action-on-a-podium.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
-import ImageSlider from "./components/imageSlider/imageSlider";
+
 
 const LandingPage = () => {
 
