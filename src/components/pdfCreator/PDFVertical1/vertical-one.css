@@ -18,6 +18,14 @@
     --lg: 18px;
     --tl: 24px;
 }
+.Preview-pdf{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 .container-one{
     background-color: rgb(249, 249, 249);
@@ -239,6 +247,29 @@
     height: 25px;
     margin-top: 5px;
 }
+.preview-button{
+    background-color: var(--black-grey);
+    color: var(--white);
+    border-radius: 12px;
+    border: none;
+    height: 25px;
+    margin-top: 5px;
+    font-size: x-small;
+}
+.watermark-button{
+    background-color: var(--black-grey);
+    color: var(--white);
+    border-radius: 12px;
+    border: none;
+    height: 25px;
+    margin-top: 5px;
+    font-size: x-small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
 .download-button-one {
     background-color: var(--red);
     color: var(--white);
@@ -274,6 +305,21 @@
         border: var(--black) .5px solid;
         border-radius: 8px;
     }
+    .Preview-pdf{
+        z-index: 0;
+        position: absolute;
+        width: 98%;
+        height: 100%;
+        top: 5%;
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+    }
+    .icon-for-watermark {
+        font-size: 10px; /* Ajusta el tamaño del ícono */
+        margin-right: 0px; /* Espaciado entre el ícono y el texto */
+        color: rgb(255, 255, 255);
+    }
     .erase-download-buttons{
         align-items: center;
     }
@@ -283,6 +329,30 @@
         border-radius: 12px;
         border: none;
         height: 20px;
+        font-size: x-small;
+    }
+    .preview-button{
+        background-color: var(--black-grey);
+        color: var(--white);
+        border-radius: 12px;
+        border: none;
+        height: 20px;
+        margin-top: 1px;
+        font-size: x-small;
+    }
+    .watermark-button{
+        background-color: var(--black-grey);
+        color: var(--white);
+        border-radius: 12px;
+        border: none;
+        height: 20px;
+        margin-top: 1px;
+        font-size: xx-small;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
     }
     .download-button-one {
         background-color: var(--red);
@@ -292,6 +362,7 @@
         height: 20px;
         width: 110px;
         margin-top: 0px;
+        font-size: x-small;
     }
     .container-logo-one{
         position: absolute;
@@ -312,18 +383,23 @@
         border-radius: 8px;;
     }
     .title-input-one{
+        position: relative;
         width: 85%;
+        top: 2%;
     }
     .text-input-one{
         position: relative;
         height: 15%;
+        top: 4%;
     }
     .principal-text-one{
         height: 100%;
+        top: 20%;
     }
     .container-image-vertical-one{
         position: relative;
         display: flex;
+        top: 5%;
         width: 100%;
         height: 40%;
         justify-content: space-around;
@@ -335,7 +411,7 @@
     }
     .description-input-for-vertical-one{
         width: 100%;
-        top: 19%;
+        top: 25%;
     }
     .description-text-one-for-vertical-one{
         width: 60%;

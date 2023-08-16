@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
         height: '65mm',
         maxWidth: '95mm',
         maxHeight: '100mm',
-        border: '1pt solid black',
         objectFit: 'cover',
     },
     description3: {
@@ -178,12 +177,17 @@ const styles = StyleSheet.create({
     },
 });
 
-const CreatePDFVertical6 = ({ data, pdfContent, formData }) => {
+const ReactPDFVertical6 = ({ data, pdfContent, formData }) => {
     const formattedDate = data.fecha ? format(parseISO(data.fecha), 'dd MMMM yyyy') : '';
 
     return (
         <Document>
         <Page size="A4" style={styles.page}>
+            {data.watermark && (
+                    <View style={styles.watermark}>
+                        <Image src={watermark} />
+                    </View>
+                )}
             <View style={styles.container}>
             <Image src={data.logo} style={styles.logo} />
             
@@ -247,8 +251,8 @@ const CreatePDFVertical6 = ({ data, pdfContent, formData }) => {
 };
 
 const toBlob = async (data) => {
-    const pdfBlob = await pdf(<CreatePDFVertical6 data={data} />).toBlob();
+    const pdfBlob = await pdf(<ReactPDFVertical6 data={data} />).toBlob();
     return pdfBlob;
 };
 
-export { CreatePDFVertical6, toBlob };
+export { ReactPDFVertical6, toBlob };

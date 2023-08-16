@@ -156,14 +156,18 @@ const styles = StyleSheet.create({
     },
 });
 
-const CreatePDFVertical5 = ({ data }) => {
+const ReactPDFVertical5 = ({ data }) => {
     const formattedDate = data.fecha ? format(parseISO(data.fecha), 'dd MMMM yyyy') : '';
 
     return (
         <Document>
         <Page size="A4" style={styles.page}>
+            {data.watermark && (
+                    <View style={styles.watermark}>
+                        <Image src={watermark} />
+                    </View>
+                )}
             <View style={styles.container}>
-            <Image src={data.logo} style={styles.logo} />
             {data.logo &&
                 (<View style={styles.logo}>
                     <Image src={data.logo}/>
@@ -220,8 +224,8 @@ const CreatePDFVertical5 = ({ data }) => {
 };
 
 const toBlob = async (data) => {
-    const pdfBlob = await pdf(<CreatePDFVertical5 data={data} />).toBlob();
+    const pdfBlob = await pdf(<ReactPDFVertical5 data={data} />).toBlob();
     return pdfBlob;
 };
 
-export { CreatePDFVertical5, toBlob };
+export { ReactPDFVertical5, toBlob };

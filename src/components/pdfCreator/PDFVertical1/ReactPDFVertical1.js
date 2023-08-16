@@ -84,17 +84,30 @@ const styles = StyleSheet.create({
     right: '5mm',
     fontSize: 11
   },
+  watermark: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    opacity: 0.5,
+},
+
 });
 
 
 
-const PDFGenerator = ({ data }) => {
+const ReactPDFVertical1 = ({ data }) => {
     const formattedDate = data.fecha ? format(parseISO(data.fecha), 'dd MMMM yyyy') : '';
     
     return (
         
         <Document>
             <Page size="A4" style={styles.page}>
+                {data.watermark && (
+                    <View style={styles.watermark}>
+                        <Image src={watermark} />
+                    </View>
+                )}
                 <View style={styles.container}>
                 {data.logo &&
                     (<View style={styles.logo}>
@@ -118,8 +131,8 @@ const PDFGenerator = ({ data }) => {
     };
 
     const toBlob = async (data) => {
-    const pdfBlob = await pdf(<PDFGenerator data={data}/>).toBlob();
+    const pdfBlob = await pdf(<ReactPDFVertical1 data={data}/>).toBlob();
     return pdfBlob;
 };
 
-export { PDFGenerator, toBlob };
+export { ReactPDFVertical1, toBlob };

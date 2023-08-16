@@ -248,7 +248,7 @@
     width: 15px;
     color: white;
 }
-.image-3-vertical {
+.six-image-for-vertical {
     text-align: center;
     position: relative;
     display: flex;
@@ -331,4 +331,23 @@
     margin: 0;
     padding: 0;
     
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 415px){
+    .six-image-for-vertical {
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 80%; 
+        border: rgb(67, 67, 67) solid 1px;
+        background-color: rgb(214, 214, 214);
+        box-sizing: border-box;
+        padding: 0;
+        object-fit: cover;
+    }
+
 }

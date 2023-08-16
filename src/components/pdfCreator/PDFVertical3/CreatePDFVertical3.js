@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import './Vertical-three.css';
 import { pdf } from '@react-pdf/renderer';
-import { PDFGenerator, toBlob } from './ReactPDFVertical3';
+import { ReactPDFVertical3, toBlob } from './ReactPDFVertical3';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { PDFViewer, StyleSheet } from '@react-pdf/renderer';
 
 const CreatePDFVertical3 = () => {
     const [pdfGenerated, setPdfGenerated] = useState(false);
+    const [showPreview, setShowPreview] = useState(false);
     const [formData, setFormData] = useState({
+        waterMark: null,
         logo: null,
         fecha: '',
         titulo: '',
@@ -22,6 +25,29 @@ const CreatePDFVertical3 = () => {
         descripcion3: '', // Nuevo campo para la descripción de la tercera imagen
         contacto: '',
         });
+
+        const stylePreview = StyleSheet.create({
+            previewPage: {
+                width: '100%',
+                height: '100%',
+                top: '0%',
+                position: 'absolute',
+                flexDirection: 'column',
+                backgroundColor: '#ffffff',
+                padding: '3mm',
+                zindex: '4'
+            }});
+    
+        const handleWatermarkImageChange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const url = URL.createObjectURL(file);
+                setFormData((prevData) => ({
+                ...prevData,
+                waterMark: url,
+                }));
+            }
+        };
 
     const handleLogoChange = (e) => {
         const file = e.target.files[0];
@@ -87,6 +113,7 @@ const CreatePDFVertical3 = () => {
     const handleResetForm = () => {
         const userConfirmed = window.confirm('¿Estás seguro de que deseas restablecer el formulario? Se perderán los cambios no guardados.');
         setFormData({
+        waterMark: null,
         texto: '',
         logo: null,
         fecha: '',
@@ -119,6 +146,24 @@ const CreatePDFVertical3 = () => {
         <section className="container-one">
         <div className='erase-download-buttons'>
             <button className="reset-button-one" onClick={handleResetForm}>Reset</button>
+            <input type="file" id="watermark-upload" accept="image/*" onChange={handleWatermarkImageChange} style={{ display: 'none' }} />
+                        <label htmlFor="watermark-upload" className="watermark-button">
+                            {formData.waterMark ? (
+                                <span>
+                                    <FontAwesomeIcon icon={faCheck} className='icon-for-watermark' /> {' '}
+                                    <span className="image-title" style={{ fontSize: 'x-small' }}>
+                                        Marca lista
+                                    </span>
+                                </span>
+                            ) : (
+                                <span>
+                                    Marca de agua
+                                </span>
+                            )}
+                        </label>
+                        <button className="preview-button" onClick={() => setShowPreview(!showPreview)}>
+                            {showPreview ? 'Cerrar Previa' : 'Vista Previa'}
+                        </button>
             {/* <button className="add-page-button" onClick={handleAddPage}>Agregar Página</button> */}
             <button className="download-button-one" onClick={handleDownload}>Descargar PDF</button>
             {/* <div className="total-pages">
@@ -161,6 +206,7 @@ const CreatePDFVertical3 = () => {
                 {formData.titulo && <button id="cancel-title-one" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'titulo', value: '' } })}>X</button>}
             </div>
             <div className="text-input-one">
+            {formData.texto && <button id="cancel-text-one" className='cancel-button-for-vertical-one' onClick={() => handleCancelImage1()}>X</button>}
                 <textarea
                     placeholder="Agrega un texto no mayor a 6 líneas"
                     name="texto"
@@ -170,12 +216,12 @@ const CreatePDFVertical3 = () => {
                     rows={6}
                     maxLength={577}
                 />
-                    {formData.texto && <button id="cancel-text-one" className='cancel-button-for-vertical-one' onClick={() => handleCancelImage1()}>X</button>}
+
             </div>
             <div className="container-image-vertical-one">
                 {formData.imagen1 && <button id="cancel-image-one" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen1: null }))}>X</button>}
                 <input type="file" id="image-upload-1" accept="image/*" onChange={handleImage1Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-1" className="image-for-vertical-one"> 
+                <label htmlFor="image-upload-1" className="image-for-vertical-form-three"> 
                     {formData.imagen1 ? (
                                         <span>
                                             <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
@@ -191,7 +237,7 @@ const CreatePDFVertical3 = () => {
                 </label>
                 {formData.imagen2 && <button id="cancel-image-two" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen2: null }))}>X</button>}
                 <input type="file" id="image-upload-2" accept="image/*" onChange={handleImage2Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-2" className="image-for-vertical-one"> 
+                <label htmlFor="image-upload-2" className="image-for-vertical-form-three"> 
                     {formData.imagen2 ? (
                                         <span>
                                             <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
@@ -212,9 +258,9 @@ const CreatePDFVertical3 = () => {
             <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-two' name="descripcion2" value={formData.descripcion2} onChange={handleInputChange} />
             {formData.descripcion2 && <button id="cancel-description-2-one" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'descripcion2', value: '' } })}>X</button>}
             </div>
-            <div className='container-image-vertical-three'>
+            <div className='container-image-vertical-form-three'>
                 <input type="file" id="image-upload-3" accept="image/*" onChange={handleImage3Change} style={{ display: 'none' }} />
-                <label htmlFor="image-upload-3" className="image-for-vertical-one">
+                <label htmlFor="image-upload-3" className="image-for-vertical-form-three">
                     {formData.imagen3 ? (
                                         <span>
                                             <FontAwesomeIcon icon={faCheck} className='done-icon' /> {' '}
@@ -231,7 +277,7 @@ const CreatePDFVertical3 = () => {
                 {formData.imagen3 && <button id="cancel-button-three" className='cancel-button-for-vertical-one' onClick={() => setFormData((prevData) => ({ ...prevData, imagen3: null }))}>X</button>}
             </div>
 
-            <div className="description-input-v2-three">
+            <div className="description-input-form-three">
             <input type="text" maxLength={65} placeholder="Descrip imagen (opcional)" className='description-text-one' name="descripcion3" value={formData.descripcion3} onChange={handleInputChange} />
             {formData.descripcion3 && <button id="cancel-description-button-three" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'descripcion3', value: '' } })}>X</button>}
             </div>
@@ -246,8 +292,16 @@ const CreatePDFVertical3 = () => {
                 maxLength={92}
                 onChange={handleInputChange}
             />
-            {formData.contacto && <button id="cancel-contact-one-vertical" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'contacto', value: '' } })}>X</button>}
+            {formData.contacto && <button id="cancel-contact-three-vertical" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'contacto', value: '' } })}>X</button>}
         </div>
+
+        <section className='Preview-pdf'>
+                {showPreview && (
+                    <PDFViewer style={stylePreview.previewPage} >
+                        <ReactPDFVertical3 data={formData} />
+                    </PDFViewer>
+                    )}
+        </section>
     </section>
     );
 };

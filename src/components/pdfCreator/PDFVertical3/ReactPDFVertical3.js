@@ -2,6 +2,7 @@
 import React from 'react';
 import { Document, Page, Text, View, Image, StyleSheet, pdf } from '@react-pdf/renderer';
 import { parseISO, format } from 'date-fns';
+import { Image as PDFImage } from '@react-pdf/renderer';    
 
 const styles = StyleSheet.create({
     page: {
@@ -118,14 +119,26 @@ const styles = StyleSheet.create({
         right: '5mm',
         fontSize: 11,
     },
+    watermark: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        opacity: 0.5,
+    },
 });
 
-const CreatePDFVertical3 = ({ data }) => {
+const ReactPDFVertical3 = ({ data }) => {
     const formattedDate = data.fecha ? format(parseISO(data.fecha), 'dd MMMM yyyy') : '';
 
     return (
         <Document>
         <Page size="A4" style={styles.page}>
+        {data.watermark && (
+                    <View style={styles.watermark}>
+                        <Image src={watermark} />
+                    </View>
+                )}
             <View style={styles.container}>
             {data.logo &&
                 (<View style={styles.logo}>
@@ -167,8 +180,8 @@ const CreatePDFVertical3 = ({ data }) => {
 };
 
 const toBlob = async (data) => {
-    const pdfBlob = await pdf(<CreatePDFVertical3 data={data} />).toBlob();
+    const pdfBlob = await pdf(<ReactPDFVertical3 data={data} />).toBlob();
     return pdfBlob;
 };
 
-export { CreatePDFVertical3, toBlob };
+export { ReactPDFVertical3, toBlob };

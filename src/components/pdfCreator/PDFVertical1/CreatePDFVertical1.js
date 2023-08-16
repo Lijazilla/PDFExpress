@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import './vertical-one.css'
 import { pdf } from '@react-pdf/renderer';
-import { PDFGenerator, toBlob } from './ReactPDFVertical1';
+import { ReactPDFVertical1, toBlob } from './ReactPDFVertical1';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { PDFViewer, StyleSheet } from '@react-pdf/renderer';
+
 
 
 
@@ -12,8 +14,10 @@ const CreatePDFVertical1 = () => {
     const [pdfGenerated, setPdfGenerated] = useState(false);
     const [pagesData, setPagesData] = useState([{ /* Default data for first page */ }]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [showPreview, setShowPreview] = useState(false);
     const [formData, setFormData] = useState({
         texto: '',
+        waterMark: null,
         logo: null,
         fecha: '',
         titulo: '',
@@ -21,6 +25,30 @@ const CreatePDFVertical1 = () => {
         descriptionFirst: '',
         contacto: '',
     });
+
+    const stylePreview = StyleSheet.create({
+        previewPage: {
+            width: '100%',
+            height: '100%',
+            top: '0%',
+            position: 'absolute',
+            flexDirection: 'column',
+            backgroundColor: '#ffffff',
+            padding: '3mm',
+            zindex: '4'
+        }});
+
+    const handleWatermarkImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            setFormData((prevData) => ({
+            ...prevData,
+            waterMark: url,
+            }));
+        }
+    };
+    
 
     const handleLogoChange = (e) => {
         const file = e.target.files[0];
@@ -77,6 +105,7 @@ const CreatePDFVertical1 = () => {
         const userConfirmed = window.confirm('¿Estás seguro de que deseas restablecer el formulario? Se perderán los cambios no guardados.');
         setFormData({
         texto: '',
+        waterMark: null,
         logo: null,
         fecha: '',
         titulo: '',
@@ -103,8 +132,29 @@ const CreatePDFVertical1 = () => {
 
     return (
         <section className="container-one">
+            
+
             <div className='erase-download-buttons'>
                 <button className="reset-button-one" onClick={handleResetForm}>Reset</button>
+                <input type="file" id="watermark-upload" accept="image/*" onChange={handleWatermarkImageChange} style={{ display: 'none' }} />
+                        <label htmlFor="watermark-upload" className="watermark-button">
+                            {formData.waterMark ? (
+                                <span>
+                                    <FontAwesomeIcon icon={faCheck} className='icon-for-watermark' /> {' '}
+                                    <span className="image-title" style={{ fontSize: 'x-small' }}>
+                                        Marca lista
+                                    </span>
+                                </span>
+                            ) : (
+                                <span>
+                                    Marca de agua
+                                </span>
+                            )}
+                        </label>
+                        <button className="preview-button" onClick={() => setShowPreview(!showPreview)}>
+                            {showPreview ? 'Cerrar Previa' : 'Vista Previa'}
+                        </button>
+
                 {/* <button className="add-page-button" onClick={handleAddPage}>Agregar Página</button> */}
                 <button className="download-button-one" onClick={handleDownload}>Descargar PDF</button>
                 {/* <div className="total-pages">
@@ -194,6 +244,14 @@ const CreatePDFVertical1 = () => {
                 />
                 {formData.contacto && <button id="cancel-contact-one-vertical" className='cancel-button-for-vertical-one' onClick={() => handleInputChange({ target: { name: 'contacto', value: '' } })}>X</button>}
             </div>
+
+            <section className='Preview-pdf'>
+                {showPreview && (
+                    <PDFViewer style={stylePreview.previewPage} >
+                        <ReactPDFVertical1 data={formData} />
+                    </PDFViewer>
+                    )}
+            </section>
         </section>
     )}; 
 
