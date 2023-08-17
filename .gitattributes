@@ -1,0 +1,4 @@
+node_modules/.cache/default-development/6.pack filter=lfs diff=lfs merge=lfs -text
+node_modules/.cache/default-development/28.pack filter=lfs diff=lfs merge=lfs -text
+node_modules/.cache/default-development/33.pack filter=lfs diff=lfs merge=lfs -text
+node_modules/canvas/build/Release/librsvg-2.so.2 filter=lfs diff=lfs merge=lfs -text
