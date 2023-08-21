@@ -170,7 +170,7 @@ const LandingPage = () => {
                     
                     <section className="pricing-boxes">
                         <aside className="montly">
-                            <h1>PDF Express Plan Mensual Individual</h1>
+                            <h1>Reporte PDF - Plan Mensual Individual</h1>
                             <div className="price-tax-box">
                                 <h2>MXN $219.00/Mes</h2>
                                 <p>IVA NO INCLUIDO</p>
@@ -185,7 +185,7 @@ const LandingPage = () => {
                         </aside>
 
                         <aside className="anualy">
-                            <h1>PDF Express Plan Anual Indiviual</h1>
+                            <h1>Reporte PDF - Plan Anual Indiviual</h1>
                             <div className="price-tax-box">
                                 <h2>MXN $2,388.00/año</h2>
                                 <p>IVA NO INCLUIDO</p>
@@ -205,7 +205,7 @@ const LandingPage = () => {
                     
                     <section className="pricing-boxes">
                         <aside className="montly">
-                            <h1>PDF Express Plan Mensual para Equipos</h1>
+                            <h1>Reporte PDF - Plan Mensual para Equipos</h1>
                             <div className="price-tax-box">
                                 <h2>MXN $199.00/Mes (por licencia)</h2>
                                 <p>IVA NO INCLUIDO</p>
@@ -220,7 +220,7 @@ const LandingPage = () => {
                         </aside>
 
                         <aside className="anualy">
-                            <h1>PDF Express Plan Anual para Equipos</h1>
+                            <h1>Reporte PDF - Plan Anual para Equipos</h1>
                             <div className="price-tax-box-teams">
                                 <h2>MXN $2,280.00/año (por licencia)</h2>
                                 <p>IVA NO INCLUIDO</p>
