@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.711dd815.css",
+    "main.js": "/static/js/main.30af1792.js",
+    "static/media/busy-project-manager-overwhelmed-by-work.png": "/static/media/busy-project-manager-overwhelmed-by-work.c18ea690828e49913907.png",
+    "static/media/person-managing-digital-tasks.png": "/static/media/person-managing-digital-tasks.c7b1c3d5ace83b4f2f79.png",
+    "static/media/people-collaborating-with-tech-.png": "/static/media/people-collaborating-with-tech-.042ff3fd9d9f7eb68f12.png",
+    "static/media/athlete-posing-in-action-on-a-podium.png": "/static/media/athlete-posing-in-action-on-a-podium.b18e6a61a547bfc4b8e5.png",
+    "index.html": "/index.html",
+    "main.711dd815.css.map": "/static/css/main.711dd815.css.map",
+    "main.30af1792.js.map": "/static/js/main.30af1792.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.711dd815.css",
+    "static/js/main.30af1792.js"
+  ]
+}
